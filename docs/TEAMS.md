@@ -9,6 +9,7 @@ How to use multiple specialized agents collaboratively in AI Agents Library.
 Agent Teams bring together multiple AI agents, each with their own expertise, to collaborate on conversations. Instead of one agent's perspective, you get comprehensive answers from a team of specialists.
 
 **Key Benefits:**
+
 - Multiple perspectives on complex problems
 - Specialized agents contribute their unique strengths
 - Coordinated discussion with built-in host
@@ -29,6 +30,7 @@ Agent Teams bring together multiple AI agents, each with their own expertise, to
 ### The Host Agent
 
 Every team has a host who:
+
 - Decides speaking order
 - Keeps discussion organized
 - Synthesizes insights
@@ -36,6 +38,7 @@ Every team has a host who:
 - Manages conversation flow
 
 **You can:**
+
 - Interrupt the host at any time
 - Customize host behavior in Advanced Options
 - Resume whenever you're ready
@@ -56,24 +59,28 @@ Every team has a host who:
 **Available Templates:**
 
 **DeFi Strategy Team**
+
 - Portfolio Analyzer
-- Yield Optimizer  
+- Yield Optimizer
 - Risk Assessor
 - Gas Cost Calculator
 
 **Content Creation Team**
+
 - Writer
 - Editor
 - SEO Specialist
 - Social Media Adapter
 
 **Research Team**
+
 - Data Gatherer
 - Analyst
 - Citation Checker
 - Summarizer
 
 **Problem Solving Team**
+
 - Strategy Consultant
 - Technical Expert
 - Risk Evaluator
@@ -106,6 +113,7 @@ Only that agent responds directly.
 ### Private Messages
 
 Click agent's avatar to send direct message:
+
 - Other team members don't see it
 - Use for sensitive questions
 - Coordinate behind the scenes
@@ -113,18 +121,21 @@ Click agent's avatar to send direct message:
 ### Interrupt and Resume
 
 **Interrupt:** Click "Pause" or interrupt naturally
+
 - Team freezes current state
 - Conversation pauses mid-discussion
 
 **Resume:** Click "Continue" or prompt host
+
 - Team picks up where it left off
 - Maintains context
 
 ### Team Speed
 
 Adjust response pacing:
+
 - **Fast:** Quick exchanges (good for simple queries)
-- **Medium:** Balanced discussion [Default]
+- **Medium:** Balanced discussion \[Default]
 - **Slow:** Thorough deliberation (complex problems)
 
 ---
@@ -134,6 +145,7 @@ Adjust response pacing:
 ### DeFi Portfolio Analysis
 
 **Team:**
+
 - Portfolio Analyzer
 - Risk Assessor
 - Yield Optimizer
@@ -142,6 +154,7 @@ Adjust response pacing:
 **User:** "Review my positions and suggest improvements"
 
 **Flow:**
+
 1. Portfolio Analyzer examines holdings
 2. Risk Assessor evaluates exposure
 3. Yield Optimizer identifies opportunities
@@ -155,6 +168,7 @@ Adjust response pacing:
 ### Content Strategy
 
 **Team:**
+
 - Topic Researcher
 - Content Writer
 - SEO Specialist
@@ -163,6 +177,7 @@ Adjust response pacing:
 **User:** "Plan a content series about DeFi for beginners"
 
 **Flow:**
+
 1. Researcher identifies trending topics
 2. Writer proposes article structures
 3. SEO suggests keywords and optimization
@@ -176,6 +191,7 @@ Adjust response pacing:
 ### Technical Problem
 
 **Team:**
+
 - Smart Contract Auditor
 - Gas Optimizer
 - Security Expert
@@ -184,6 +200,7 @@ Adjust response pacing:
 **User:** "Review this contract for issues"
 
 **Flow:**
+
 1. Auditor scans for vulnerabilities
 2. Gas Optimizer finds efficiency improvements
 3. Security Expert assesses risks
@@ -199,6 +216,7 @@ Adjust response pacing:
 ### Team Size
 
 **Optimal:** 3-5 agents
+
 - Enough diversity
 - Manageable coordination
 - Maintains focus
@@ -213,6 +231,7 @@ Adjust response pacing:
 ❌ 4 variations of the same role
 
 **Complementary skills:**
+
 - Breadth agent + Depth agent
 - Creative agent + Analytical agent
 - Big picture + Details
@@ -222,11 +241,13 @@ Adjust response pacing:
 **Default host works for most cases**
 
 **Customize when:**
+
 - Specific industry knowledge needed
 - Particular facilitation style wanted
 - Custom decision-making process
 
 **Advanced Options → Custom Moderator:**
+
 ```
 You are a DeFi-focused team coordinator.
 
@@ -244,8 +265,9 @@ Guide discussion toward:
 ### Conversation Management
 
 **Start broad, get specific:**
+
 ```
-✅ "Analyze our DeFi strategy" 
+✅ "Analyze our DeFi strategy"
    → Let team discuss
    → Then: "@Risk-Assessor what's our worst-case scenario?"
 
@@ -255,11 +277,13 @@ Guide discussion toward:
 ```
 
 **Use private messages for:**
+
 - Clarifying questions
 - Sensitive information
 - Behind-scenes coordination
 
 **Use @ mentions for:**
+
 - Direct questions to specific expertise
 - Getting second opinions
 - Resolving disagreements
@@ -271,12 +295,14 @@ Guide discussion toward:
 ### Team Templates
 
 **Save your custom teams:**
+
 1. Create and configure team
 2. Click "Save as Template"
 3. Name and describe
 4. Reuse anytime
 
 **Share templates:**
+
 - Export configuration
 - Share with team
 - Import on their end
@@ -284,11 +310,13 @@ Guide discussion toward:
 ### Sequential vs Parallel
 
 **Sequential (Default):**
+
 - Agents take turns
 - Build on previous responses
 - More organized
 
 **Parallel (Advanced):**
+
 - Agents respond simultaneously
 - Faster but potentially chaotic
 - Good for independent analyses
@@ -299,7 +327,7 @@ Give agents specific responsibilities:
 
 ```
 Portfolio Analyzer: "Data collector"
-Risk Assessor: "Devil's advocate"  
+Risk Assessor: "Devil's advocate"
 Yield Optimizer: "Opportunity spotter"
 Host: "Decision maker"
 ```
@@ -355,6 +383,7 @@ Roles guide behavior and coordination.
 ### Team responses too slow
 
 **Solutions:**
+
 - Reduce team size (3 instead of 5)
 - Increase Team Speed setting
 - Use faster model if available
@@ -363,6 +392,7 @@ Roles guide behavior and coordination.
 ### Agents talk past each other
 
 **Solutions:**
+
 - Customize host to better coordinate
 - Use @ mentions to direct conversation
 - Interrupt and redirect
@@ -371,6 +401,7 @@ Roles guide behavior and coordination.
 ### Too much agreement (no debate)
 
 **Solutions:**
+
 - Add "devil's advocate" agent
 - Customize host: "Encourage different perspectives"
 - Use agents with different philosophies
@@ -379,6 +410,7 @@ Roles guide behavior and coordination.
 ### Host too dominant
 
 **Solutions:**
+
 - Customize host: "Facilitate, don't dominate"
 - Use @ mentions to bypass host
 - Adjust host instructions to be more neutral
@@ -386,6 +418,7 @@ Roles guide behavior and coordination.
 ### Missing key perspective
 
 **Solutions:**
+
 - Add relevant agent mid-conversation
 - @ mention external agent for input
 - Note for next time to include in template
@@ -397,21 +430,25 @@ Roles guide behavior and coordination.
 ### Team Design Principles
 
 1. **Clear division of labor**
+
 - Each agent has specific expertise
 - Minimal overlap
 - Complementary strengths
 
 2. **Appropriate size**
+
 - 3-5 for most use cases
 - Can go to 6-7 for comprehensive analysis
 - Avoid 8+ (coordination breaks down)
 
 3. **Balanced perspectives**
+
 - Mix of specialist types
 - Include risk/opportunity agents
 - Add devil's advocate if needed
 
 4. **Host instructions**
+
 - Specify facilitation style
 - Set priority order if needed
 - Define success criteria
@@ -420,17 +457,17 @@ Roles guide behavior and coordination.
 
 ```json
 {
-  "name": "Academic Research Team",
   "agents": [
     "literature-reviewer",
-    "methodology-expert", 
+    "methodology-expert",
     "data-analyst",
     "citation-checker",
     "synthesizer"
   ],
   "host": {
     "instructions": "Coordinate academic research process. Ensure methodology rigor, proper citations, and clear synthesis. Facilitate from research question → literature review → methodology → analysis → conclusions."
-  }
+  },
+  "name": "Academic Research Team"
 }
 ```
 
@@ -441,6 +478,7 @@ Roles guide behavior and coordination.
 ### Reusable Templates
 
 Create templates for recurring workflows:
+
 - Weekly portfolio review
 - Content pipeline
 - Code review process
@@ -449,6 +487,7 @@ Create templates for recurring workflows:
 ### Hybrid Approach
 
 Combine team discussion with individual agent queries:
+
 1. Get team perspective
 2. @ mention specific agent for depth
 3. Use private messages for follow-ups
@@ -464,6 +503,7 @@ Combine team discussion with individual agent queries:
 ### Documentation
 
 Keep notes on what works:
+
 - Which agent combinations
 - Effective host instructions
 - Good use cases

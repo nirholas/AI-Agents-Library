@@ -13,6 +13,7 @@ Effective prompts are the foundation of powerful AI agents. This guide teaches y
 ```
 
 ### Identity
+
 Define who/what the agent is:
 
 ```
@@ -22,6 +23,7 @@ You are a DeFi security auditor specializing in Ethereum smart contracts.
 Clear identity creates consistent behavior and sets user expectations.
 
 ### Capabilities
+
 List specific skills and knowledge:
 
 ```
@@ -33,6 +35,7 @@ CAPABILITIES:
 ```
 
 ### Guidelines
+
 Behavior rules and constraints:
 
 ```
@@ -45,6 +48,7 @@ GUIDELINES:
 ```
 
 ### Output Format
+
 Structure for responses:
 
 ```
@@ -56,6 +60,7 @@ Code Examples: [Where applicable]
 ```
 
 ### Examples
+
 Demonstrate desired behavior (optional but powerful):
 
 ```
@@ -131,6 +136,7 @@ COMMUNICATION STYLE:
 ```
 
 For DeFi agents, balance between:
+
 - **Technical accuracy** (for experienced users)
 - **Accessibility** (for newcomers)
 
@@ -152,6 +158,7 @@ WHEN RISKS ARE HIGH:
 ### DeFi Prompts
 
 Include:
+
 - Risk disclaimers
 - Gas cost considerations
 - Smart contract audit status
@@ -223,18 +230,22 @@ Version 3: Optimized prompt
 ## Common Pitfalls
 
 ### ❌ Too Broad
+
 "You help with cryptocurrency"
 → Too vague, leads to inconsistent behavior
 
 ### ❌ Too Narrow
+
 "You only calculate APY for Uniswap V2 ETH/USDC pools on Thursdays"
 → Overly specific, not useful
 
 ### ❌ Contradictory
+
 "Be concise. Provide detailed explanations with examples."
 → Conflicting instructions confuse the model
 
 ### ❌ Assuming Knowledge
+
 Referring to concepts without defining them
 → Explain or link to definitions
 

@@ -11,6 +11,9 @@ Agents in AI Agents Library are specialized AI assistants designed to handle spe
 ```json
 {
   "author": "your-github-username",
+  "config": {
+    "systemRole": "Your detailed system prompt here..."
+  },
   "identifier": "unique-agent-id",
   "meta": {
     "title": "Agent Display Name",
@@ -19,16 +22,14 @@ Agents in AI Agents Library are specialized AI assistants designed to handle spe
     "tags": ["defi", "trading", "analytics"],
     "systemRole": "agent"
   },
-  "schemaVersion": 1,
-  "config": {
-    "systemRole": "Your detailed system prompt here..."
-  }
+  "schemaVersion": 1
 }
 ```
 
 ### Key Components
 
 **identifier**: URL-safe name (lowercase, hyphens, no spaces)
+
 - Good: `sperax-yield-optimizer`, `defi-portfolio-analyzer`
 - Bad: `My Agent!`, `DeFi Agent v2`
 
@@ -100,6 +101,7 @@ Protocol | APY | TVL | Risk | Gas Cost | Recommendation"
 ## Best Practices
 
 ### Do's
+
 ✅ Be specific about capabilities and limitations
 ✅ Include relevant DeFi/crypto terminology
 ✅ Provide structured, scannable output formats
@@ -108,6 +110,7 @@ Protocol | APY | TVL | Risk | Gas Cost | Recommendation"
 ✅ Use clear step-by-step workflows
 
 ### Don'ts
+
 ❌ Make financial guarantees or predictions
 ❌ Recommend specific investments without disclaimers
 ❌ Ignore security and audit status
@@ -118,6 +121,7 @@ Protocol | APY | TVL | Risk | Gas Cost | Recommendation"
 ## Agent Categories
 
 ### DeFi & Finance
+
 - Yield optimizers
 - Portfolio managers
 - Risk assessors
@@ -125,6 +129,7 @@ Protocol | APY | TVL | Risk | Gas Cost | Recommendation"
 - Gas optimizers
 
 ### Trading & Analysis
+
 - Market sentiment analyzers
 - Technical analysts
 - On-chain data interpreters
@@ -132,6 +137,7 @@ Protocol | APY | TVL | Risk | Gas Cost | Recommendation"
 - Trading strategy advisors
 
 ### Development & Security
+
 - Smart contract auditors
 - Solidity experts
 - Web3 architecture consultants
@@ -139,6 +145,7 @@ Protocol | APY | TVL | Risk | Gas Cost | Recommendation"
 - Testing specialists
 
 ### Research & Education
+
 - Protocol explainers
 - Tokenomics analysts
 - Whitepaper reviewers
@@ -192,22 +199,24 @@ Agents are automatically translated to 18 languages. Tips for translation-friend
 ## Examples of Great Agents
 
 ### Simple Agent (Trading Sentiment)
+
 ```json
 {
+  "config": {
+    "systemRole": "You analyze cryptocurrency market sentiment by synthesizing data from multiple sources: social media trends, news sentiment, on-chain metrics, and community discussions. Provide sentiment scores (bullish/neutral/bearish) with supporting evidence and confidence levels."
+  },
   "identifier": "crypto-sentiment-analyzer",
   "meta": {
     "title": "Crypto Sentiment Analyzer",
     "description": "Analyzes market sentiment from social media, news, and on-chain data",
     "avatar": "📊",
     "tags": ["trading", "sentiment", "analysis", "social"]
-  },
-  "config": {
-    "systemRole": "You analyze cryptocurrency market sentiment by synthesizing data from multiple sources: social media trends, news sentiment, on-chain metrics, and community discussions. Provide sentiment scores (bullish/neutral/bearish) with supporting evidence and confidence levels."
   }
 }
 ```
 
 ### Complex Agent (Portfolio Manager)
+
 ```json
 {
   "identifier": "defi-portfolio-manager",

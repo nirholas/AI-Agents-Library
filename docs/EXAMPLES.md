@@ -48,28 +48,33 @@ OUTPUT: Polished, ready-to-send email"
 ### Why It Works
 
 **✅ Clear Role**: "Business communication specialist who drafts emails"
+
 - Not vague "email helper"
 - Specific expertise defined
 
 **✅ Structured Output**: Numbered format
+
 - Users know what to expect
 - Consistent every time
 - Easy to scan
 
-**✅ Specific Guidelines**: 
+**✅ Specific Guidelines**:
+
 - "Max 150 words" prevents rambling
 - "Match formality to context" handles different scenarios
 - "Remove filler words" = crisp writing
 
 **✅ Flexible Input**: Accepts notes, context, or rough drafts
+
 - Meets users where they are
 - No rigid requirements
 
 **Real Usage:**
+
 ```
 User: "Decline meeting with Sarah, suggest next week, keep friendly"
 
-Agent: 
+Agent:
 Subject: Re: Meeting This Week
 
 Hi Sarah,
@@ -137,25 +142,30 @@ INPUT: Meeting transcript, notes, or recording"
 ### Why It Works
 
 **✅ Consistent Structure**: Same format every time
+
 - Teams know where to find information
 - Easy to review quickly
 - Scannable in Slack/email
 
 **✅ Actionable Focus**: Emphasizes decisions and tasks
+
 - Filters out noise
 - Surfaces what matters
 - Creates accountability
 
 **✅ Checkbox Format**: Makes tasks trackable
+
 - Copy/paste into task manager
 - Visual completion tracking
 - Clear ownership
 
 **✅ Handles Missing Info**: @TBD and Due: TBD
+
 - Doesn't break when details missing
 - Flags items needing clarification
 
 **Real Usage:**
+
 ```
 [After 45-minute meeting transcript]
 
@@ -243,21 +253,25 @@ OUTPUT: Ready-to-post content for specified platform(s)"
 ### Why It Works
 
 **✅ Platform-Specific Rules**: Different specs for each platform
+
 - Twitter: 280 char limit, conversational
 - LinkedIn: Professional, structured
 - Instagram: Visual-first, casual
 
 **✅ Clear Process**: 5 steps from input to output
+
 - Users know what to expect
 - Handles ambiguity (asks platform if unclear)
 - Offers variations
 
-**✅ Practical Details**: 
+**✅ Practical Details**:
+
 - "Aim for 240-260" better than "280 max"
 - "First line is critical" for Instagram
 - Hashtag quantity guidance
 
 **Real Usage:**
+
 ```
 User: "I just launched a new productivity app. Want to announce it."
 
@@ -274,7 +288,7 @@ Built a productivity app that actually respects your time. No endless features. 
 
 Free beta: [link]
 
-What's your #1 productivity struggle? 
+What's your #1 productivity struggle?
 
 #ProductivityTools #IndieHacking
 
@@ -368,26 +382,31 @@ PRINCIPLES:
 ### Why It Works
 
 **✅ Three Levels**: From critical to optional
+
 - Users can choose how much editing
 - "Essential" = must fix
 - "Style Polish" = take or leave
 
 **✅ Voice Preservation**: Explicit rule
+
 - "NEVER change meaning"
 - "Preserve unique voice"
 - Builds trust
 
 **✅ Explains Changes**: Not just corrections
+
 - "WHY changes improve"
 - Educational
 - Helps user learn
 
 **✅ Clear Output**: Clean copy + explanations
+
 - Easy to accept changes
 - Understand improvements
 - Get better over time
 
 **Real Usage:**
+
 ```
 User: "Can you proofread this email? [pastes draft with errors]"
 
@@ -472,26 +491,31 @@ FORMAT: Numbered lists for easy scanning"
 ### Why It Works
 
 **✅ Three Thinking Modes**: Different approaches for different needs
+
 - Divergent = quantity (brainstorm)
 - Convergent = quality (evaluate)
 - Lateral = creativity (reframe)
 
 **✅ Positive Energy**: "Yes-and approach"
+
 - Builds confidence
 - Encourages wild ideas
 - Creates safe space
 
 **✅ Flexible Process**: Adapts to user needs
+
 - Asks which mode
 - Offers to switch
 - Can go deeper
 
 **✅ Actionable Output**: Numbered lists
+
 - Easy to reference
 - Pick favorites
 - Share with teams
 
 **Real Usage:**
+
 ```
 User: "I need ideas for a blog post about productivity"
 
@@ -510,7 +534,7 @@ Agent:
 "Why Being Less Productive Made Me More Successful"
 Challenge the productivity obsession
 
-2. **Productivity Myths**  
+2. **Productivity Myths**
 "5 'Productivity Hacks' That Actually Waste Time"
 Debunk common advice
 
@@ -567,6 +591,7 @@ Want to explore any of these? Or switch to divergent mode for 20 more convention
 ## Your Turn
 
 Pick one example above and modify it for your needs. Change the:
+
 - Industry/domain
 - Output format
 - Specific rules
