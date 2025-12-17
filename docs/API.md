@@ -21,6 +21,7 @@ GET /index.json
 Returns the complete agent index with all 505+ agents.
 
 **Response Format:**
+
 ```json
 {
   "agents": [
@@ -42,6 +43,7 @@ Returns the complete agent index with all 505+ agents.
 ```
 
 **Example:**
+
 ```bash
 curl https://nirholas.github.io/AI-Agents-Library/index.json
 ```
@@ -57,14 +59,20 @@ GET /{agent-identifier}.json
 Returns single agent data in English.
 
 **Example:**
+
 ```bash
 curl https://nirholas.github.io/AI-Agents-Library/defi-yield-optimizer.json
 ```
 
 **Response:**
+
 ```json
 {
   "author": "username",
+  "config": {
+    "systemRole": "You are a DeFi yield optimization specialist..."
+  },
+  "createAt": "2024-01-15",
   "identifier": "defi-yield-optimizer",
   "meta": {
     "title": "DeFi Yield Optimizer",
@@ -73,11 +81,7 @@ curl https://nirholas.github.io/AI-Agents-Library/defi-yield-optimizer.json
     "tags": ["defi", "yield", "analytics"],
     "systemRole": "agent"
   },
-  "schemaVersion": 1,
-  "config": {
-    "systemRole": "You are a DeFi yield optimization specialist..."
-  },
-  "createAt": "2024-01-15"
+  "schemaVersion": 1
 }
 ```
 
@@ -92,6 +96,7 @@ GET /{agent-identifier}.{locale}.json
 Returns agent in specific language.
 
 **Supported Locales:**
+
 - `en-US` - English
 - `zh-CN` - Simplified Chinese
 - `zh-TW` - Traditional Chinese
@@ -112,6 +117,7 @@ Returns agent in specific language.
 - `bg-BG` - Bulgarian
 
 **Example:**
+
 ```bash
 curl https://nirholas.github.io/AI-Agents-Library/defi-yield-optimizer.zh-CN.json
 ```
@@ -128,12 +134,10 @@ const response = await fetch('https://nirholas.github.io/AI-Agents-Library/index
 const data = await response.json();
 
 // Filter by category
-const defiAgents = data.agents.filter(agent => 
-  agent.meta.tags.includes('defi')
-);
+const defiAgents = data.agents.filter((agent) => agent.meta.tags.includes('defi'));
 
 // Display in your UI
-defiAgents.forEach(agent => {
+defiAgents.forEach((agent) => {
   console.log(`${agent.meta.avatar} ${agent.meta.title}`);
   console.log(agent.meta.description);
 });
@@ -144,29 +148,28 @@ defiAgents.forEach(agent => {
 ```javascript
 function searchAgents(query) {
   return fetch('https://nirholas.github.io/AI-Agents-Library/index.json')
-    .then(r => r.json())
-    .then(data => data.agents.filter(agent =>
-      agent.meta.title.toLowerCase().includes(query.toLowerCase()) ||
-      agent.meta.description.toLowerCase().includes(query.toLowerCase()) ||
-      agent.meta.tags.some(tag => tag.includes(query.toLowerCase()))
-    ));
+    .then((r) => r.json())
+    .then((data) =>
+      data.agents.filter(
+        (agent) =>
+          agent.meta.title.toLowerCase().includes(query.toLowerCase()) ||
+          agent.meta.description.toLowerCase().includes(query.toLowerCase()) ||
+          agent.meta.tags.some((tag) => tag.includes(query.toLowerCase())),
+      ),
+    );
 }
 
 // Usage
-searchAgents('yield').then(results => console.log(results));
+searchAgents('yield').then((results) => console.log(results));
 ```
 
 ### 3. Load Agent by ID
 
 ```javascript
 async function loadAgent(identifier, locale = 'en-US') {
-  const filename = locale === 'en-US' 
-    ? `${identifier}.json`
-    : `${identifier}.${locale}.json`;
-  
-  const response = await fetch(
-    `https://nirholas.github.io/AI-Agents-Library/${filename}`
-  );
+  const filename = locale === 'en-US' ? `${identifier}.json` : `${identifier}.${locale}.json`;
+
+  const response = await fetch(`https://nirholas.github.io/AI-Agents-Library/${filename}`);
   return response.json();
 }
 
@@ -181,10 +184,8 @@ console.log(agent.config.systemRole);
 async function getAgentsByTag(tag) {
   const response = await fetch('https://nirholas.github.io/AI-Agents-Library/index.json');
   const data = await response.json();
-  
-  return data.agents.filter(agent => 
-    agent.meta.tags.includes(tag)
-  );
+
+  return data.agents.filter((agent) => agent.meta.tags.includes(tag));
 }
 
 // Get all trading agents
@@ -197,7 +198,7 @@ const tradingAgents = await getAgentsByTag('trading');
 async function getRandomAgent() {
   const response = await fetch('https://nirholas.github.io/AI-Agents-Library/index.json');
   const data = await response.json();
-  
+
   const random = Math.floor(Math.random() * data.agents.length);
   return data.agents[random];
 }
@@ -209,31 +210,31 @@ async function getRandomAgent() {
 async function getMarketplaceStats() {
   const response = await fetch('https://nirholas.github.io/AI-Agents-Library/index.json');
   const data = await response.json();
-  
+
   const stats = {
     totalAgents: data.agents.length,
     tags: {},
     authors: new Set(),
-    recentAgents: []
+    recentAgents: [],
   };
-  
-  data.agents.forEach(agent => {
+
+  data.agents.forEach((agent) => {
     // Count tags
-    agent.meta.tags.forEach(tag => {
+    agent.meta.tags.forEach((tag) => {
       stats.tags[tag] = (stats.tags[tag] || 0) + 1;
     });
-    
+
     // Unique authors
     stats.authors.add(agent.author);
   });
-  
+
   // Sort agents by creation date
   stats.recentAgents = data.agents
     .sort((a, b) => new Date(b.createAt) - new Date(a.createAt))
     .slice(0, 10);
-  
+
   stats.authors = stats.authors.size;
-  
+
   return stats;
 }
 ```
@@ -246,20 +247,20 @@ async function getMarketplaceStats() {
 
 ```typescript
 interface Agent {
-  author: string;              // GitHub username
-  identifier: string;          // Unique ID (URL-safe)
+  author: string; // GitHub username
+  identifier: string; // Unique ID (URL-safe)
   meta: {
-    title: string;             // Display name
-    description: string;       // Brief description
-    avatar: string;            // Single emoji
-    tags: string[];            // 3-8 keywords
-    systemRole?: string;       // Optional role type
+    title: string; // Display name
+    description: string; // Brief description
+    avatar: string; // Single emoji
+    tags: string[]; // 3-8 keywords
+    systemRole?: string; // Optional role type
   };
-  schemaVersion: 1;            // Always 1
+  schemaVersion: 1; // Always 1
   config: {
-    systemRole: string;        // Full system prompt
+    systemRole: string; // Full system prompt
   };
-  createAt: string;            // ISO date
+  createAt: string; // ISO date
 }
 ```
 
@@ -276,12 +277,14 @@ interface IndexResponse {
 ## Rate Limits
 
 **GitHub Pages:**
+
 - No authentication required
-- Generous rate limits (soft limit ~10 requests/second)
+- Generous rate limits (soft limit \~10 requests/second)
 - Cached via CDN
 - Free for all use cases
 
 **Best Practices:**
+
 - Cache index.json locally
 - Don't fetch on every page load
 - Use conditional requests (ETag/If-Modified-Since)
@@ -296,8 +299,8 @@ All endpoints support CORS. You can make requests from any domain.
 ```javascript
 // Works from any origin
 fetch('https://nirholas.github.io/AI-Agents-Library/index.json')
-  .then(r => r.json())
-  .then(data => console.log(data));
+  .then((r) => r.json())
+  .then((data) => console.log(data));
 ```
 
 ---
@@ -308,28 +311,29 @@ fetch('https://nirholas.github.io/AI-Agents-Library/index.json')
 
 ```javascript
 class AgentCache {
-  constructor(ttl = 3600000) { // 1 hour default
+  constructor(ttl = 3600000) {
+    // 1 hour default
     this.cache = null;
     this.timestamp = null;
     this.ttl = ttl;
   }
-  
+
   async getAgents() {
     const now = Date.now();
-    
+
     // Return cached if fresh
-    if (this.cache && (now - this.timestamp) < this.ttl) {
+    if (this.cache && now - this.timestamp < this.ttl) {
       return this.cache;
     }
-    
+
     // Fetch fresh data
     const response = await fetch('https://nirholas.github.io/AI-Agents-Library/index.json');
     this.cache = await response.json();
     this.timestamp = now;
-    
+
     return this.cache;
   }
-  
+
   invalidate() {
     this.cache = null;
     this.timestamp = null;
@@ -348,14 +352,12 @@ const agents = await cache.getAgents();
 ```javascript
 async function safeLoadAgent(identifier) {
   try {
-    const response = await fetch(
-      `https://nirholas.github.io/AI-Agents-Library/${identifier}.json`
-    );
-    
+    const response = await fetch(`https://nirholas.github.io/AI-Agents-Library/${identifier}.json`);
+
     if (!response.ok) {
       throw new Error(`Agent not found: ${identifier}`);
     }
-    
+
     return await response.json();
   } catch (error) {
     console.error('Failed to load agent:', error);
@@ -377,14 +379,14 @@ const https = require('https');
 function searchAgents(query) {
   https.get('https://nirholas.github.io/AI-Agents-Library/index.json', (res) => {
     let data = '';
-    res.on('data', chunk => data += chunk);
+    res.on('data', (chunk) => (data += chunk));
     res.on('end', () => {
       const agents = JSON.parse(data).agents;
-      const results = agents.filter(a =>
-        a.meta.title.toLowerCase().includes(query.toLowerCase())
+      const results = agents.filter((a) =>
+        a.meta.title.toLowerCase().includes(query.toLowerCase()),
       );
-      
-      results.forEach(agent => {
+
+      results.forEach((agent) => {
         console.log(`${agent.meta.avatar} ${agent.meta.title}`);
         console.log(`   ${agent.meta.description}`);
         console.log();
@@ -399,35 +401,37 @@ searchAgents(process.argv[2]);
 ### React Component
 
 ```jsx
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 function AgentList({ tag }) {
   const [agents, setAgents] = useState([]);
   const [loading, setLoading] = useState(true);
-  
+
   useEffect(() => {
     fetch('https://nirholas.github.io/AI-Agents-Library/index.json')
-      .then(r => r.json())
-      .then(data => {
-        const filtered = tag
-          ? data.agents.filter(a => a.meta.tags.includes(tag))
-          : data.agents;
+      .then((r) => r.json())
+      .then((data) => {
+        const filtered = tag ? data.agents.filter((a) => a.meta.tags.includes(tag)) : data.agents;
         setAgents(filtered);
         setLoading(false);
       });
   }, [tag]);
-  
+
   if (loading) return <div>Loading...</div>;
-  
+
   return (
     <div>
-      {agents.map(agent => (
+      {agents.map((agent) => (
         <div key={agent.identifier}>
-          <h3>{agent.meta.avatar} {agent.meta.title}</h3>
+          <h3>
+            {agent.meta.avatar} {agent.meta.title}
+          </h3>
           <p>{agent.meta.description}</p>
           <div>
-            {agent.meta.tags.map(t => (
-              <span key={t} className="tag">{t}</span>
+            {agent.meta.tags.map((t) => (
+              <span key={t} className="tag">
+                {t}
+              </span>
             ))}
           </div>
         </div>
@@ -442,6 +446,7 @@ function AgentList({ tag }) {
 ## Updates
 
 The index is updated automatically when new agents are merged to main branch:
+
 - New agents appear within 24 hours
 - Updates to existing agents reflect immediately
 - No API versioning (backwards compatible changes only)
@@ -451,7 +456,7 @@ The index is updated automatically when new agents are merged to main branch:
 ## Support
 
 - Issues: github.com/nirholas/AI-Agents-Library/issues
-- Discord: [Join community]
+- Discord: \[Join community]
 
 ---
 

@@ -9,16 +9,19 @@ Understanding model parameters helps you fine-tune agent behavior for optimal re
 Controls randomness in responses.
 
 **Low (0.0 - 0.3)**
+
 - Deterministic, consistent output
 - Same input → same output
 - Best for: Code generation, calculations, factual queries
 
-**Medium (0.4 - 0.7)** [Default]
+**Medium (0.4 - 0.7)** \[Default]
+
 - Balanced creativity and consistency
 - Slight variations in responses
 - Best for: General conversation, analysis
 
 **High (0.8 - 2.0)**
+
 - Creative, unpredictable output
 - High variation
 - Best for: Brainstorming, creative writing
@@ -33,7 +36,7 @@ Temperature 0.0:
 [Same answer every time]
 
 Temperature 0.7:
-"Reentrancy is a vulnerability where..." 
+"Reentrancy is a vulnerability where..."
 [Slight variations in phrasing]
 
 Temperature 1.5:
@@ -47,6 +50,7 @@ Alternative to temperature. Controls diversity by probability threshold.
 
 **How it works:**
 Model generates candidate words with probabilities:
+
 - `ethereum` (40%)
 - `blockchain` (30%)
 - `crypto` (20%)
@@ -59,8 +63,9 @@ Model generates candidate words with probabilities:
 → Considers: ethereum (40%) only
 
 **Settings:**
+
 - **0.1 - 0.5**: Very focused, conservative
-- **0.6 - 0.9**: Balanced diversity [Default: 0.9]
+- **0.6 - 0.9**: Balanced diversity \[Default: 0.9]
 - **0.95 - 1.0**: Maximum diversity
 
 ⚠️ **Don't adjust both temperature AND top_p** - use one or the other.
@@ -70,15 +75,18 @@ Model generates candidate words with probabilities:
 Penalizes words that already appeared, reducing repetition.
 
 **Negative (-2.0 to -0.1)**
+
 - Encourages repetition
 - Reinforces key terms
 - Good for: Technical documentation
 
-**Zero (0.0)** [Default]
+**Zero (0.0)** \[Default]
+
 - Natural repetition
 - Balanced
 
 **Positive (0.1 to 2.0)**
+
 - Discourages repetition
 - Forces vocabulary diversity
 - Good for: Creative content, avoiding redundancy
@@ -104,17 +112,21 @@ Presence Penalty = 1.5:
 Penalizes words based on how OFTEN they've appeared.
 
 **Difference from Presence Penalty:**
+
 - **Presence**: Did word appear? (yes/no)
 - **Frequency**: How many times? (count)
 
 **Negative (-2.0 to -0.1)**
+
 - Word spam possible
 - Very high repetition
 
-**Zero (0.0)** [Default]
+**Zero (0.0)** \[Default]
+
 - Natural frequency
 
 **Positive (0.1 to 2.0)**
+
 - Strong anti-repetition
 - Forces alternative phrasings
 
@@ -137,16 +149,19 @@ Frequency Penalty = 2.0:
 ### Reasoning Effort (Claude Sonnet 4 Only)
 
 **low**
+
 - Faster responses
 - Basic reasoning
 - Good for: Simple queries, quick answers
 
-**medium** [Default]
+**medium** \[Default]
+
 - Balanced speed and depth
 - Standard reasoning
 - Good for: Most use cases
 
 **high**
+
 - Slower responses
 - Deep analysis
 - More tokens used
@@ -155,84 +170,100 @@ Frequency Penalty = 2.0:
 ## Recommended Settings by Use Case
 
 ### DeFi Analysis Agent
+
 ```json
 {
-  "temperature": 0.3,
-  "top_p": 0.8,
-  "presence_penalty": 0.2,
   "frequency_penalty": 0.3,
-  "reasoning_effort": "medium"
+  "presence_penalty": 0.2,
+  "reasoning_effort": "medium",
+  "temperature": 0.3,
+  "top_p": 0.8
 }
 ```
-*Consistent, factual, avoids repetition*
+
+_Consistent, factual, avoids repetition_
 
 ### Creative Content Writer
+
 ```json
 {
-  "temperature": 0.9,
-  "top_p": 0.95,
-  "presence_penalty": 0.5,
   "frequency_penalty": 0.6,
-  "reasoning_effort": "low"
+  "presence_penalty": 0.5,
+  "reasoning_effort": "low",
+  "temperature": 0.9,
+  "top_p": 0.95
 }
 ```
-*Diverse, creative, varied vocabulary*
+
+_Diverse, creative, varied vocabulary_
 
 ### Code Generator
+
 ```json
 {
-  "temperature": 0.1,
-  "top_p": 0.9,
-  "presence_penalty": 0.0,
   "frequency_penalty": 0.0,
-  "reasoning_effort": "high"
+  "presence_penalty": 0.0,
+  "reasoning_effort": "high",
+  "temperature": 0.1,
+  "top_p": 0.9
 }
 ```
-*Deterministic, precise, allows technical repetition*
+
+_Deterministic, precise, allows technical repetition_
 
 ### Research Assistant
+
 ```json
 {
-  "temperature": 0.4,
-  "top_p": 0.85,
-  "presence_penalty": 0.1,
   "frequency_penalty": 0.2,
-  "reasoning_effort": "high"
+  "presence_penalty": 0.1,
+  "reasoning_effort": "high",
+  "temperature": 0.4,
+  "top_p": 0.85
 }
 ```
-*Thorough, analytical, comprehensive*
+
+_Thorough, analytical, comprehensive_
 
 ### Trading Advisor
+
 ```json
 {
-  "temperature": 0.2,
-  "top_p": 0.8,
-  "presence_penalty": 0.0,
   "frequency_penalty": 0.1,
-  "reasoning_effort": "medium"
+  "presence_penalty": 0.0,
+  "reasoning_effort": "medium",
+  "temperature": 0.2,
+  "top_p": 0.8
 }
 ```
-*Consistent, reliable, factual*
+
+_Consistent, reliable, factual_
 
 ## Tuning Tips
 
 ### Start Conservative
+
 Begin with default/low values, then increase gradually:
+
 1. Test with temperature = 0.3
 2. If too rigid, bump to 0.5
 3. Adjust incrementally until optimal
 
 ### Single Variable
+
 Change ONE parameter at a time to understand its effect.
 
 ### Context Matters
+
 - **Short prompts** → Lower temperature (needs focus)
 - **Long, detailed prompts** → Can increase temperature
 - **Ambiguous queries** → Lower temperature (consistency)
 - **Creative tasks** → Higher temperature
 
 ### Monitor Quality
+
 Track across multiple queries:
+
 - Consistency
 - Accuracy
 - Creativity
@@ -242,17 +273,20 @@ Track across multiple queries:
 ## Parameter Interactions
 
 **Temperature + Top P**
+
 - Don't tune both - use one
 - Temperature is more intuitive
 - Top P gives finer control
 
 **Presence + Frequency Penalties**
+
 - Can use both together
 - Presence = reduce repetition
 - Frequency = strongly reduce repetition
 - Typical combo: presence=0.3, frequency=0.5
 
 **Reasoning Effort + Temperature**
+
 - Independent controls
 - Reasoning affects thinking depth
 - Temperature affects output randomness
@@ -262,17 +296,20 @@ Track across multiple queries:
 
 **Max Tokens**
 Not a tuning parameter, but important:
+
 - Sets maximum response length
 - Different per model
 - Costs scale with length
 
 **Models:**
+
 - GPT-3.5: 4k context
 - GPT-4: 8k context
 - GPT-4-32k: 32k context
 - Claude Sonnet 4: 200k context
 
 For agents, set based on expected output:
+
 - **Quick answers**: 500-1000 tokens
 - **Analysis**: 1000-2000 tokens
 - **Comprehensive**: 2000-4000 tokens

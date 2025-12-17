@@ -9,6 +9,7 @@ Common issues and solutions for AI agent creation and usage.
 ### Agent Ignores Instructions
 
 **Symptoms:**
+
 - Doesn't follow specified format
 - Skips important steps
 - Acts generically instead of specialized role
@@ -16,12 +17,14 @@ Common issues and solutions for AI agent creation and usage.
 **Solutions:**
 
 1. **Make instructions more explicit**
+
 ```
 ❌ "Be professional"
 ✅ "Use formal business tone. No contractions. Address as 'Dear [Name]'"
 ```
 
 2. **Use numbered steps for processes**
+
 ```
 When responding:
 1. First, acknowledge the request
@@ -30,6 +33,7 @@ When responding:
 ```
 
 3. **Add examples of desired behavior**
+
 ```
 EXAMPLE:
 User: "Summarize this meeting"
@@ -38,6 +42,7 @@ You: "## Key Decisions
 ```
 
 4. **Check prompt length**
+
 - If over 1000 words, model may miss details
 - Condense or break into clear sections
 
@@ -46,6 +51,7 @@ You: "## Key Decisions
 ### Inconsistent Output Quality
 
 **Symptoms:**
+
 - Sometimes excellent, sometimes poor
 - Format changes between responses
 - Tone varies unpredictably
@@ -53,10 +59,12 @@ You: "## Key Decisions
 **Solutions:**
 
 1. **Lower temperature**
+
 - Set to 0.1-0.3 for consistent behavior
 - 0 = completely deterministic
 
 2. **Add format constraints**
+
 ```
 ALWAYS format as:
 - Section 1: [specific content]
@@ -65,6 +73,7 @@ ALWAYS format as:
 ```
 
 3. **Remove ambiguous language**
+
 ```
 ❌ "Be helpful and creative"
 ✅ "Provide exactly 3 options. Format as numbered list."
@@ -75,6 +84,7 @@ ALWAYS format as:
 ### Agent Too Verbose
 
 **Symptoms:**
+
 - Responses too long
 - Unnecessary details
 - Rambling explanations
@@ -82,6 +92,7 @@ ALWAYS format as:
 **Solutions:**
 
 1. **Set explicit length limits**
+
 ```
 - Maximum 150 words per response
 - Use bullet points for anything over 3 items
@@ -89,10 +100,12 @@ ALWAYS format as:
 ```
 
 2. **Increase frequency penalty**
+
 - Set to 0.8-1.5
 - Discourages repetitive filler words
 
 3. **Add brevity instructions**
+
 ```
 BREVITY RULES:
 - Get to the point immediately
@@ -106,6 +119,7 @@ BREVITY RULES:
 ### Agent Too Brief
 
 **Symptoms:**
+
 - Incomplete answers
 - Missing critical details
 - Unhelpful brevity
@@ -113,6 +127,7 @@ BREVITY RULES:
 **Solutions:**
 
 1. **Request elaboration in prompt**
+
 ```
 - Provide comprehensive coverage
 - Include examples for each point
@@ -121,10 +136,12 @@ BREVITY RULES:
 ```
 
 2. **Lower frequency penalty**
+
 - Set to 0 or negative
 - Allows more natural expression
 
 3. **Add detail requirements**
+
 ```
 For each recommendation:
 - Why it works
@@ -138,6 +155,7 @@ For each recommendation:
 ### Repetitive Language
 
 **Symptoms:**
+
 - Same words/phrases repeated
 - Redundant content
 - Circular explanations
@@ -145,16 +163,19 @@ For each recommendation:
 **Solutions:**
 
 1. **Increase presence penalty**
+
 ```
 presence_penalty: 1.0-1.5
 ```
 
 2. **Increase frequency penalty**
+
 ```
 frequency_penalty: 1.0-1.5
 ```
 
 3. **Add variety instructions**
+
 ```
 - Use varied vocabulary
 - Don't repeat the same examples
@@ -168,18 +189,21 @@ frequency_penalty: 1.0-1.5
 ### ChatGPT Custom GPT
 
 **Issue: GPT doesn't save**
+
 - Check if you're on ChatGPT Plus
 - Try different browser
 - Clear cache and retry
 - Verify all required fields filled
 
 **Issue: Knowledge files not working**
+
 - Confirm file format (PDF, TXT, DOCX supported)
 - Check file size (max varies by plan)
 - Wait a few minutes after upload
 - Try re-uploading
 
 **Issue: Can't share GPT**
+
 - Check privacy settings (Only me / Link / Public)
 - Verify you have GPT Plus
 - Try generating new share link
@@ -190,18 +214,21 @@ frequency_penalty: 1.0-1.5
 ### Claude Projects
 
 **Issue: Instructions not applying**
+
 - Verify instructions in Project settings, not chat
 - Check you're in correct project
 - Try creating new conversation within project
 - Restart browser if persistent
 
 **Issue: Project knowledge not accessible**
+
 - Confirm files uploaded successfully
 - Check file format compatibility
 - Verify file size under limits
 - Wait for processing (large files take time)
 
 **Issue: Context limit reached**
+
 - Claude Projects have 200K token limit
 - Long conversations + large docs = limit reached
 - Solution: Start new conversation in same project
@@ -212,18 +239,21 @@ frequency_penalty: 1.0-1.5
 ### AI Agents Library Marketplace
 
 **Issue: Agent not appearing**
+
 - Check if PR merged
 - Wait 24 hours for deployment
 - Clear browser cache
 - Search by exact identifier
 
 **Issue: Agent translation incorrect**
+
 - Our i18n is automated and imperfect
 - You can provide manual translations
 - Submit PR with corrected locale files
 - See CONTRIBUTING.md for format
 
 **Issue: Can't add agent to workspace**
+
 - Refresh browser
 - Check internet connection
 - Try different browser
@@ -238,6 +268,7 @@ frequency_penalty: 1.0-1.5
 **Common mistakes:**
 
 1. **Trailing commas**
+
 ```json
 ❌ {
   "title": "My Agent",
@@ -251,6 +282,7 @@ frequency_penalty: 1.0-1.5
 ```
 
 2. **Unescaped quotes**
+
 ```json
 ❌ "systemRole": "You are a "professional" agent"
 
@@ -258,6 +290,7 @@ frequency_penalty: 1.0-1.5
 ```
 
 3. **Missing commas**
+
 ```json
 ❌ {
   "title": "Agent"
@@ -271,6 +304,7 @@ frequency_penalty: 1.0-1.5
 ```
 
 **Solution:**
+
 - Use JSON validator: jsonlint.com
 - Use code editor with JSON syntax highlighting
 - Copy working example and modify
@@ -282,11 +316,13 @@ frequency_penalty: 1.0-1.5
 **For GitHub submissions:**
 
 1. **Check file location**
+
 - Must be in `/src/` directory
 - Use exact filename from identifier
 - Extension must be `.json`
 
 2. **Check naming**
+
 ```
 ✅ src/my-agent-name.json
 ❌ src/my_agent_name.json
@@ -295,6 +331,7 @@ frequency_penalty: 1.0-1.5
 ```
 
 3. **Verify committed**
+
 ```bash
 git status
 git add src/your-agent.json
@@ -312,11 +349,13 @@ git commit -m "Add agent"
 **Solutions:**
 
 1. **Test with real users**
+
 - Have someone else try it
 - Use actual scenarios, not synthetic
 - Test edge cases and ambiguities
 
 2. **Document test cases**
+
 ```
 Test 1: [Scenario]
 Input: [What you sent]
@@ -325,6 +364,7 @@ Actual: [What happened]
 ```
 
 3. **Version control your prompts**
+
 - Save each iteration
 - Note what changed and why
 - Can roll back if needed
@@ -336,14 +376,17 @@ Actual: [What happened]
 **Causes:**
 
 1. **Temperature too high**
+
 - Randomness causes variation
 - Lower to 0.3 or below
 
 2. **Ambiguous instructions**
+
 - Model interprets differently each time
 - Be more explicit
 
 3. **Context matters**
+
 - Previous messages affect responses
 - Test in fresh conversations
 
@@ -356,26 +399,31 @@ Actual: [What happened]
 **Common reasons:**
 
 1. **Duplicate agent**
+
 - Check existing agents first
 - Search by function, not just name
 - Differentiate if similar
 
 2. **Low quality prompt**
+
 - Too vague or generic
 - No clear purpose
 - Poor formatting
 
 3. **Inappropriate content**
+
 - Violates guidelines
 - Offensive/harmful
 - Copyright issues
 
 4. **Technical errors**
+
 - Invalid JSON
 - Missing required fields
 - Wrong file location
 
 **Next steps:**
+
 - Read reviewer feedback
 - Make requested changes
 - Resubmit with explanation
@@ -387,6 +435,7 @@ Actual: [What happened]
 **Timeline:** Usually 48-72 hours
 
 **If longer:**
+
 - Check PR for reviewer comments
 - Verify all checks passed
 - Tag maintainer if urgent
@@ -401,21 +450,25 @@ Actual: [What happened]
 **Causes:**
 
 1. **Model selection**
+
 - GPT-4 slower than GPT-3.5
 - Claude Opus slower than Sonnet
 - Check model in settings
 
 2. **Long context**
+
 - Large uploaded files
 - Long conversation history
 - Solution: Start fresh conversation
 
 3. **Complex instructions**
+
 - Overly detailed prompts
 - Multiple nested conditions
 - Simplify if possible
 
 4. **High reasoning_effort (Claude)**
+
 - Set to "low" or "medium"
 - Reserve "high" for complex tasks
 
@@ -424,14 +477,17 @@ Actual: [What happened]
 ### Rate Limits Hit
 
 **ChatGPT:**
-- Plus: ~50 messages/3 hours for GPT-4
+
+- Plus: \~50 messages/3 hours for GPT-4
 - Solution: Use GPT-3.5 or wait
 
 **Claude:**
+
 - Pro: Higher limits but still exist
 - Solution: Space out requests
 
 **AI Agents Library:**
+
 - Varies by plan
 - Contact support for limit info
 
@@ -449,6 +505,7 @@ Actual: [What happened]
 ### When Opening Issue
 
 Include:
+
 - Agent identifier or full JSON
 - What you expected
 - What actually happened
@@ -459,7 +516,8 @@ Include:
 ### Emergency Issues
 
 For critical bugs or security issues:
-- Mark as [URGENT] in subject
+
+- Mark as \[URGENT] in subject
 - Don't publicly share exploit details
 
 ---
@@ -468,18 +526,18 @@ For critical bugs or security issues:
 
 **Problem → Solution:**
 
-| Issue | Quick Fix |
-|-------|-----------|
-| Inconsistent | Lower temperature to 0.3 |
-| Repetitive | Increase penalties to 1.0 |
-| Too long | Set word limit explicitly |
-| Too short | Request elaboration in prompt |
-| Wrong tone | Add tone examples |
-| Ignores format | Use numbered structure |
-| Too creative | Lower temperature |
-| Too boring | Increase temperature to 0.7 |
-| Invalid JSON | Use validator, check commas/quotes |
-| Slow | Choose faster model or simplify |
+| Issue          | Quick Fix                          |
+| -------------- | ---------------------------------- |
+| Inconsistent   | Lower temperature to 0.3           |
+| Repetitive     | Increase penalties to 1.0          |
+| Too long       | Set word limit explicitly          |
+| Too short      | Request elaboration in prompt      |
+| Wrong tone     | Add tone examples                  |
+| Ignores format | Use numbered structure             |
+| Too creative   | Lower temperature                  |
+| Too boring     | Increase temperature to 0.7        |
+| Invalid JSON   | Use validator, check commas/quotes |
+| Slow           | Choose faster model or simplify    |
 
 ---
 

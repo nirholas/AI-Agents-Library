@@ -14,6 +14,7 @@ Thank you for contributing to the AI Agents Library Agent Marketplace! This guid
 ### Agent Requirements
 
 ✅ **Must Have:**
+
 - Unique identifier (no duplicates)
 - Clear, descriptive title
 - Concise description (160-200 characters)
@@ -23,6 +24,7 @@ Thank you for contributing to the AI Agents Library Agent Marketplace! This guid
 - Valid JSON format
 
 ❌ **Not Allowed:**
+
 - Copyrighted content
 - Malicious or harmful prompts
 - Personal/private information
@@ -46,6 +48,9 @@ Create `/src/your-agent-name.json`:
 ```json
 {
   "author": "your-github-username",
+  "config": {
+    "systemRole": "You are [detailed system prompt]..."
+  },
   "identifier": "your-agent-name",
   "meta": {
     "title": "Your Agent Title",
@@ -53,22 +58,21 @@ Create `/src/your-agent-name.json`:
     "avatar": "🤖",
     "tags": ["defi", "trading", "relevant", "keywords"]
   },
-  "schemaVersion": 1,
-  "config": {
-    "systemRole": "You are [detailed system prompt]..."
-  }
+  "schemaVersion": 1
 }
 ```
 
 ### Naming Conventions
 
 **Identifier** (filename):
+
 - Use lowercase
 - Use hyphens for spaces: `sperax-yield-optimizer`
 - No special characters except hyphens
 - Keep it descriptive but concise
 
 **Title** (display name):
+
 - Use Title Case
 - Can include spaces
 - Clear and professional
@@ -76,6 +80,7 @@ Create `/src/your-agent-name.json`:
 ## Categories & Tags
 
 ### Primary Categories
+
 - `defi` - DeFi protocols, yield, liquidity
 - `trading` - Market analysis, strategies
 - `security` - Audits, vulnerability analysis
@@ -87,6 +92,7 @@ Create `/src/your-agent-name.json`:
 - `nft` - NFT analytics, collections
 
 ### Specific Tags
+
 - Protocol names: `uniswap`, `aave`, `sperax`
 - Technologies: `ethereum`, `layer2`, `solidity`
 - Functions: `yield-optimization`, `risk-assessment`
@@ -98,6 +104,7 @@ Use 3-8 tags total for optimal discoverability.
 ### System Prompts
 
 Good prompts are:
+
 - **Clear**: Specific role and capabilities
 - **Structured**: Organized sections (identity, guidelines, format)
 - **Bounded**: Define scope and limitations
@@ -152,6 +159,7 @@ feat: add [Agent Name]
 ```
 
 Examples:
+
 - `feat: add DeFi Yield Optimizer`
 - `feat: add Smart Contract Security Auditor`
 
@@ -159,20 +167,24 @@ Examples:
 
 ```markdown
 ## Agent Information
+
 - **Name**: Your Agent Title
 - **Category**: Primary category
 - **Tags**: tag1, tag2, tag3
 
 ## Description
+
 Brief explanation of what your agent does and why it's useful.
 
 ## Testing
+
 - [x] Tested with standard queries
 - [x] Validated JSON
 - [x] Follows naming conventions
 - [x] No duplicate identifiers
 
 ## Additional Notes
+
 Any special considerations or context.
 ```
 
@@ -191,6 +203,7 @@ You may receive feedback requesting changes. Please address comments promptly.
 ## After Approval
 
 Once merged:
+
 1. Your agent is automatically translated to 18 languages
 2. It appears in the marketplace within 24 hours
 3. Users can immediately add it to their workspace
@@ -198,16 +211,19 @@ Once merged:
 ## Community Guidelines
 
 ### Be Respectful
+
 - Welcome diverse perspectives
 - Provide constructive feedback
 - Help newcomers learn
 
 ### Be Professional
+
 - Use appropriate language
 - Credit sources and inspiration
 - Respect intellectual property
 
 ### Be Collaborative
+
 - Improve existing agents (with permission)
 - Share knowledge and tips
 - Help troubleshoot issues
@@ -228,6 +244,7 @@ To update an existing agent:
 ## Recognition
 
 Top contributors:
+
 - Featured on AI Agents Library homepage
 - Community recognition badges
 - Access to beta features
