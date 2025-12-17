@@ -4,13 +4,13 @@
 
 A comprehensive collection of specialized AI agents with universal compatibility. Works with any AI platform that supports agent indexes - no vendor lock-in, no platform restrictions.
 
-[![][agents-shield]][agents-url]
-[![][build-shield]][build-url]
-[![][contributors-shield]][contributors-url]
-[![][forks-shield]][forks-url]
-[![][stargazers-shield]][stargazers-url]
-[![][issues-shield]][issues-url]
-[![][license-shield]][license-url]
+\[!\[]\[agents-shield]]\[agents-url]
+\[!\[]\[build-shield]]\[build-url]
+\[!\[]\[contributors-shield]]\[contributors-url]
+\[!\[]\[forks-shield]]\[forks-url]
+\[!\[]\[stargazers-shield]]\[stargazers-url]
+\[!\[]\[issues-shield]]\[issues-url]
+\[!\[]\[license-shield]]\[license-url]
 
 ---
 
@@ -5377,18 +5377,3 @@ Can generate the code for anything you specify
 Specializes in writing Stable Diffusion prompts
 
 `stable-diffusion` `prompt`
-
-[agents-shield]: https://img.shields.io/badge/agents-505%2B-blue
-[agents-url]: #-agent-categories
-[build-shield]: https://github.com/nirholas/AI-Agents-Library/workflows/Release/badge.svg
-[build-url]: https://github.com/nirholas/AI-Agents-Library/actions
-[contributors-shield]: https://img.shields.io/github/contributors/nirholas/AI-Agents-Library.svg
-[contributors-url]: https://github.com/nirholas/AI-Agents-Library/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/nirholas/AI-Agents-Library.svg
-[forks-url]: https://github.com/nirholas/AI-Agents-Library/network/members
-[issues-shield]: https://img.shields.io/github/issues/nirholas/AI-Agents-Library.svg
-[issues-url]: https://github.com/nirholas/AI-Agents-Library/issues
-[license-shield]: https://img.shields.io/github/license/nirholas/AI-Agents-Library.svg
-[license-url]: https://github.com/nirholas/AI-Agents-Library/blob/main/LICENSE
-[stargazers-shield]: https://img.shields.io/github/stars/nirholas/AI-Agents-Library.svg
-[stargazers-url]: https://github.com/nirholas/AI-Agents-Library/stargazers
