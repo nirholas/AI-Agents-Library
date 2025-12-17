@@ -23,7 +23,7 @@
 
 ## Introduction
 
-**SperaxOS** represents a paradigm shift in how we interact with AI. At its core is a sophisticated agent ecosystem that transforms traditional AI chat into a dynamic, collaborative, and highly specialized experience. Unlike conventional AI assistants that attempt to be generalists, SperaxOS leverages **specialized AI agents** that excel in specific domains—from DeFi analytics to smart contract development, from portfolio management to creative content generation.
+**SperaxOS** AI agent index at its core is a sophisticated agent ecosystem that transforms traditional AI chat into a dynamic, collaborative, and highly specialized experience. Unlike conventional AI assistants that attempt to be generalists, SperaxOS leverages **specialized AI agents** that excel in specific domains—from DeFi analytics to smart contract development, from portfolio management to creative content generation.
 
 ### Why Agents Matter
 
