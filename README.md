@@ -4,20 +4,12 @@
 
 A comprehensive collection of specialized AI agents with universal compatibility. Works with any AI platform that supports agent indexes - no vendor lock-in, no platform restrictions.
 
-\[!\[]\[agents-shield]]\[agents-url]
-\[!\[]\[build-shield]]\[build-url]
-\[!\[]\[contributors-shield]]\[contributors-url]
-\[!\[]\[forks-shield]]\[forks-url]
-\[!\[]\[stargazers-shield]]\[stargazers-url]
-\[!\[]\[issues-shield]]\[issues-url]
-\[!\[]\[license-shield]]\[license-url]
-
 ---
 
 ## ✨ Key Features
 
 - ✅ **505+ Specialized Agents** - DeFi, crypto, development, writing, education, and more
-- ✅ **18 Languages** - Automated i18n translation workflow
+- ✅ **18 Languages** - Automated i18n translation workflow ([Learn More →](./docs/I18N_WORKFLOW.md))
 - ✅ **Agent Teams** - Multi-agent collaboration with coordinated workflows
 - ✅ **Universal Format** - Standard JSON schema works everywhere
 - ✅ **No Vendor Lock-in** - Switch platforms without losing work
