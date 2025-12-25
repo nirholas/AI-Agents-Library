@@ -1,11 +1,11 @@
 import { readJSONSync, writeJSONSync } from 'fs-extra';
 import { merge } from 'lodash-es';
-import { Dirent, existsSync } from 'node:fs';
+import { Dirent, copyFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import pMap from 'p-map';
 import { zodToJsonSchema } from 'zod-to-json-schema';
 
-import { agents, config, localesDir, meta, publicDir, schemasDir } from '../core/constants';
+import { agents, config, localesDir, meta, publicDir, root, schemasDir } from '../core/constants';
 import { AgentParser } from '../parsers/agent-parser';
 import { SperaxAgent, speraxAgentSchema } from '../schema/agentMeta';
 import { findDuplicates } from '../utils/common';
@@ -159,6 +159,20 @@ class AgentBuilder {
   };
 
   /**
+   * 复制 CNAME 文件到 public 目录（如果存在）
+   * 这允许自定义域名在 GitHub Pages 部署时保持不变
+   */
+  copyCNAME = () => {
+    const cnamePath = resolve(root, 'CNAME');
+    const publicCNAMEPath = resolve(publicDir, 'CNAME');
+
+    if (existsSync(cnamePath)) {
+      copyFileSync(cnamePath, publicCNAMEPath);
+      Logger.success('CNAME 文件已复制到 public 目录');
+    }
+  };
+
+  /**
    * 执行构建流程
    */
   run = async () => {
@@ -167,6 +181,7 @@ class AgentBuilder {
 
     this.buildSchema();
     await this.buildFullLocaleAgents();
+    this.copyCNAME();
 
     const duration = Date.now() - startTime;
     Logger.success('构建流程完成', '', `耗时 ${duration}ms`);
