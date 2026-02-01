@@ -5,7 +5,7 @@
 A comprehensive collection of specialized AI agents with universal compatibility. Works with any AI platform that supports agent indexes - no vendor lock-in, no platform restrictions.
 
 ---
-
+ 
 ## ✨ Key Features
 
 - ✅ **505+ Specialized Agents** - DeFi, crypto, development, writing, education, and more
