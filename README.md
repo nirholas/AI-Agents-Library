@@ -13,7 +13,7 @@ A comprehensive collection of specialized AI agents with universal compatibility
 - ✅ **Agent Teams** - Multi-agent collaboration with coordinated workflows
 - ✅ **Universal Format** - Standard JSON schema works everywhere
 - ✅ **No Vendor Lock-in** - Switch platforms without losing work
-- ✅ **Open Source** - MIT licensed, fully transparent
+- ✅ **Open Source** - MIT licensed, fully transparent 
 - ✅ **API Access** - RESTful API via GitHub Pages CDN
 - ✅ **Custom Domain Ready** - Easy white-labeling
 
