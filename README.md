@@ -1,4 +1,4 @@
-# 🤖 AI Agents Library 
+# 🤖 AI Agents Library  
 
 > **Universal AI agent library, index, and marketplace for DeFi, crypto, development, metaverse, MCP, and beyond**
 
