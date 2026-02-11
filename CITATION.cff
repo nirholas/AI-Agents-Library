@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use AI-Agents-Library, please cite it as below."
+type: software
+title: "AI-Agents-Library"
+abstract: "A comprehensive collection of specialized AI agents with universal compatibility. Works with any AI platform that supports agent indexes - no vendor lock-in, no platform restrictions."
+authors:
+  - alias: nirholas
+    name: nirholas
+repository-code: "https://github.com/nirholas/AI-Agents-Library"
+url: "https://github.com/nirholas/AI-Agents-Library"
+license: MIT
+version: "1.0.0"
+date-released: "2026-02-11"
+keywords:
+  - open-source
+  - nirholas

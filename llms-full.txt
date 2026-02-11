@@ -1,0 +1,18 @@
+# AI-Agents-Library
+
+> A comprehensive collection of specialized AI agents with universal compatibility. Works with any AI platform that supports agent indexes - no vendor lock-in, no platform restrictions.
+
+## Overview
+
+AI-Agents-Library is an open-source project by nirholas. A comprehensive collection of specialized AI agents with universal compatibility. Works with any AI platform that supports agent indexes - no vendor lock-in, no platform restrictions.
+
+## Repository
+
+- URL: https://github.com/nirholas/AI-Agents-Library
+- Language: TypeScript
+- License: MIT
+- Author: nirholas
+
+## Contributing
+
+Contributions are welcome. See CONTRIBUTING.md for guidelines.

@@ -1,0 +1,15 @@
+{
+    "name": "AI-Agents-Library",
+    "description": "A comprehensive collection of specialized AI agents with universal compatibility. Works with any AI platform that supports agent indexes - no vendor lock-in, no platform restrictions.",
+    "version": "1.0.0",
+    "publisher": "nirholas",
+    "repository": "https://github.com/nirholas/AI-Agents-Library",
+    "language": "TypeScript",
+    "topics": [
+        "library",
+        "nirholas",
+        "open-source",
+        "ai",
+        "agents"
+    ]
+}

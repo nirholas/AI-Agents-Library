@@ -1,0 +1,9 @@
+# AI-Agents-Library
+
+> A comprehensive collection of specialized AI agents with universal compatibility. Works with any AI platform that supports agent indexes - no vendor lock-in, no platform restrictions.
+
+## Links
+
+- Repository: https://github.com/nirholas/AI-Agents-Library
+- Author: https://github.com/nirholas
+- Full documentation: https://raw.githubusercontent.com/nirholas/AI-Agents-Library/main/llms-full.txt
