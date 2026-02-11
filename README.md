@@ -5599,3 +5599,76 @@ Can generate the code for anything you specify
 Specializes in writing Stable Diffusion prompts
 
 `stable-diffusion` `prompt`
+
+
+---
+
+## 🌐 Live HTTP Deployment
+
+**AI Agents Library** is deployed and accessible over HTTP via [MCP Streamable HTTP](https://modelcontextprotocol.io/specification/2025-03-26/basic/transports#streamable-http) transport — no local installation required.
+
+**Endpoint:**
+```
+https://modelcontextprotocol.name/mcp/ai-agents-library
+```
+
+### Connect from any MCP Client
+
+Add to your MCP client configuration (Claude Desktop, Cursor, SperaxOS, etc.):
+
+```json
+{
+  "mcpServers": {
+    "ai-agents-library": {
+      "type": "http",
+      "url": "https://modelcontextprotocol.name/mcp/ai-agents-library"
+    }
+  }
+}
+```
+
+### Available Tools (3)
+
+| Tool | Description |
+|------|-------------|
+| `search_agents` | Search agent templates |
+| `list_agent_categories` | List categories |
+| `get_agent_template` | Get agent template |
+
+### Example Requests
+
+**Search agent templates:**
+```bash
+curl -X POST https://modelcontextprotocol.name/mcp/ai-agents-library \
+  -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"search_agents","arguments":{"query":"trading bot","limit":5}}}'
+```
+
+**List categories:**
+```bash
+curl -X POST https://modelcontextprotocol.name/mcp/ai-agents-library \
+  -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"list_agent_categories","arguments":{}}}'
+```
+
+**Get agent template:**
+```bash
+curl -X POST https://modelcontextprotocol.name/mcp/ai-agents-library \
+  -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"get_agent_template","arguments":{"name":"crypto-trader"}}}'
+```
+
+### List All Tools
+
+```bash
+curl -X POST https://modelcontextprotocol.name/mcp/ai-agents-library \
+  -H "Content-Type: application/json" \
+  -d '{"jsonrpc":"2.0","id":1,"method":"tools/list"}'
+```
+
+### Also Available On
+
+- **[SperaxOS](https://speraxos.vercel.app)** — Browse and install from the [MCP marketplace](https://speraxos.vercel.app/community/mcp)
+- **All 27 MCP servers** — See the full catalog at [modelcontextprotocol.name](https://modelcontextprotocol.name)
+
+> Powered by [modelcontextprotocol.name](https://modelcontextprotocol.name) — the open MCP HTTP gateway
